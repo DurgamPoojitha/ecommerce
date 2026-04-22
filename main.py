@@ -1,4 +1,5 @@
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware # Added: CORS middleware for cross-origin requests from React
 from database.session import engine
 from database.base import Base
 
@@ -17,6 +18,15 @@ app = FastAPI(
     title="E-commerce Backend API",
     description="A production-ready E-commerce backend using FastAPI and PostgreSQL.",
     version="1.0.0"
+)
+
+# Added: Allowing frontend origins explicitly to resolve CORS issues from localhost:5173
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:5173", "http://127.0.0.1:5173"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
 )
 
 app.include_router(auth_router)
