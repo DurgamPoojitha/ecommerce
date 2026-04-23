@@ -3,11 +3,17 @@
 @tailwind utilities;
 
 @layer base {
-  body {
-    @apply bg-gray-50 text-gray-900 transition-colors duration-200;
+  html {
+    scroll-behavior: smooth;
   }
-  
+
+  body {
+    @apply bg-gradient-to-br from-gray-50 to-gray-200 text-gray-900 transition-colors duration-300 antialiased selection:bg-primary-200 selection:text-primary-900 min-h-screen;
+  }
+
   .dark body {
-    @apply bg-dark-bg text-dark-text;
+    @apply bg-[#0B0F19] text-gray-100 selection:bg-primary-800 selection:text-white min-h-screen;
+    background-image: radial-gradient(circle at 50% 0%, #1e293b 0%, transparent 60%), radial-gradient(circle at 100% 100%, #0f172a 0%, transparent 50%);
+    background-attachment: fixed;
   }
 }

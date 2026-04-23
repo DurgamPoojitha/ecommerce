@@ -1,11 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import api from '../api/axios';
-import { Trash2, CreditCard } from 'lucide-react';
+import { Trash2, CreditCard, ShieldCheck } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import CheckoutModal from '../components/CheckoutModal';
 
 const Cart = () => {
     const [cartItems, setCartItems] = useState([]);
+    const [isCheckoutOpen, setIsCheckoutOpen] = useState(false);
     const navigate = useNavigate();
+
+    const totalAmount = cartItems.reduce((acc, item) => acc + (item.product?.price || 0) * item.quantity, 0);
 
     const fetchCart = async () => {
         const { data } = await api.get('/cart/');
@@ -21,10 +25,15 @@ const Cart = () => {
         fetchCart();
     };
 
-    const handleCheckout = async () => {
+    const handleCheckoutInit = () => {
+        setIsCheckoutOpen(true);
+    };
+
+    const handleCheckoutComplete = async () => {
         try {
             await api.post('/orders/');
-            alert('Order placed successfully!');
+            setIsCheckoutOpen(false);
+            alert('Payment Successful & Order Placed!');
             navigate('/');
         } catch (err) {
             alert(err.response?.data?.detail || 'Checkout failed');
@@ -62,13 +71,20 @@ const Cart = () => {
                         </div>
                     ))}
                     <div className="flex justify-end mt-8">
-                        <button onClick={handleCheckout} className="flex items-center gap-2 px-8 py-4 bg-primary-600 hover:bg-primary-700 text-white font-bold rounded-xl shadow-lg hover:shadow-xl transition-all">
-                            <CreditCard className="h-5 w-5" />
-                            Checkout Now
+                        <button onClick={handleCheckoutInit} className="flex items-center gap-2 px-8 py-4 bg-primary-600 hover:bg-primary-700 text-white font-bold rounded-xl shadow-lg hover:shadow-xl transition-all">
+                            <ShieldCheck className="h-5 w-5" />
+                            Proceed to Secure Payment
                         </button>
                     </div>
                 </div>
             )}
+
+            <CheckoutModal
+                isOpen={isCheckoutOpen}
+                onClose={() => setIsCheckoutOpen(false)}
+                onComplete={handleCheckoutComplete}
+                totalAmount={totalAmount}
+            />
         </div>
     );
 };

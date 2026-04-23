@@ -47,8 +47,12 @@ const Products = () => {
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
                     {products.map((product) => (
                         <Link key={product.id} to={`/products/${product.id}`} className="group bg-white dark:bg-dark-card rounded-2xl p-5 shadow-sm border border-gray-100 dark:border-dark-border hover:shadow-xl hover:border-primary-100 dark:hover:border-primary-900 transition-all duration-300 transform hover:-translate-y-1 block">
-                            <div className="aspect-square w-full bg-gray-50 dark:bg-dark-bg rounded-xl mb-5 flex items-center justify-center overflow-hidden">
-                                <ShoppingBag className="h-16 w-16 text-gray-300 dark:text-gray-600 group-hover:scale-110 group-hover:text-primary-300 transition-all duration-500" />
+                            <div className="aspect-square w-full bg-gray-50 dark:bg-dark-bg rounded-xl mb-5 flex items-center justify-center overflow-hidden relative group-hover:scale-[1.02] transition-transform duration-500">
+                                {product.image_url ? (
+                                    <img src={product.image_url} alt={product.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                                ) : (
+                                    <ShoppingBag className="h-16 w-16 text-gray-300 dark:text-gray-600 group-hover:scale-110 group-hover:text-primary-300 transition-all duration-500" />
+                                )}
                             </div>
                             <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2 line-clamp-1">{product.title}</h3>
                             <p className="text-gray-500 dark:text-gray-400 text-sm mb-4 line-clamp-2 h-10">{product.description || "Premium high-quality technical product with robust features."}</p>
