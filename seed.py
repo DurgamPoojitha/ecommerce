@@ -54,18 +54,18 @@ def seed_data():
     # Create Products
     products_data = [
         {"title": "Kurkure Masala Munch", "description": "Spicy Indian snack.", "price": 20, "stock": 100, "category_name": "Snacks", "image_url": "/images/kurkure.png"},
-        {"title": "Haldiram's Bhujia", "description": "Classic savory snack.", "price": 50, "stock": 200, "category_name": "Snacks", "image_url": "/images/bujia.png"},
+        {"title": "Haldiram's Bhujia", "description": "Classic savory snack.", "price": 50, "stock": 200, "category_name": "Snacks", "image_url": "/images/haldiram .png"},
         
-        {"title": "Wooden Study Table", "description": "Ergonomic study table for your home office.", "price": 4500, "stock": 20, "category_name": "Furniture", "image_url": "/images/cotton_shirt.png"},
-        {"title": "Ergonomic Office Chair", "description": "Comfortable chair with lumbar support.", "price": 6000, "stock": 15, "category_name": "Furniture", "image_url": "/images/office_chair.png"},
+        {"title": "Wooden Study Table", "description": "Ergonomic study table for your home office.", "price": 4500, "stock": 20, "category_name": "Furniture", "image_url": "/images/wooden table.png"},
+        {"title": "Ergonomic Office Chair", "description": "Comfortable chair with lumbar support.", "price": 6000, "stock": 15, "category_name": "Furniture", "image_url": "/images/ergonomic office chair.png"},
         
         {"title": "Smartphone 5G", "description": "Latest 5G smartphone with incredible camera.", "price": 45000, "stock": 50, "category_name": "Electronics", "image_url": "https://loremflickr.com/800/600/smartphone,phone"},
-        {"title": "Wireless Earbuds", "description": "Noise-cancelling wireless earbuds.", "price": 2500, "stock": 150, "category_name": "Electronics", "image_url": "/images/keyboard.png"},
-        {"title": "Mechanical Keyboard", "description": "RGB mechanical keyboard for programming and gaming.", "price": 3200, "stock": 70, "category_name": "Electronics", "image_url": "/images/keyboard.png"},
+        {"title": "Wireless Earbuds", "description": "Noise-cancelling wireless earbuds.", "price": 2500, "stock": 150, "category_name": "Electronics", "image_url": "/images/wireless earbuds.png"},
+        {"title": "Mechanical Keyboard", "description": "RGB mechanical keyboard for programming and gaming.", "price": 3200, "stock": 70, "category_name": "Electronics", "image_url": "/images/mechanical keyboard.png"},
         
-        {"title": "Cotton T-Shirt", "description": "100% pure cotton comfortable tee.", "price": 499, "stock": 300, "category_name": "Clothes", "image_url": "https://loremflickr.com/800/600/tshirt,cotton"},
+        {"title": "Cotton T-Shirt", "description": "100% pure cotton comfortable tee.", "price": 499, "stock": 300, "category_name": "Clothes", "image_url": "/images/cotton shirt.png"},
         {"title": "Denim Jeans", "description": "Classic blue slim-fit jeans.", "price": 1299, "stock": 100, "category_name": "Clothes", "image_url": "https://loremflickr.com/800/600/jeans,denim"},
-        {"title": "Winter Jacket", "description": "High quality thermal winter wear jacket.", "price": 2999, "stock": 45, "category_name": "Clothes", "image_url": "https://loremflickr.com/800/600/jacket,winter"}
+        {"title": "Winter Jacket", "description": "High quality thermal winter wear jacket.", "price": 2999, "stock": 45, "category_name": "Clothes", "image_url": "/images/winter jacket.png"}
     ]
     
     for prod in products_data:
