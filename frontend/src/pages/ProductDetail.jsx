@@ -50,9 +50,13 @@ const ProductDetail = () => {
             </button>
 
             <div className="flex flex-col md:flex-row gap-12 bg-white dark:bg-dark-card p-8 md:p-12 rounded-3xl shadow-xl border border-gray-100 dark:border-dark-border">
-                <div className="w-full md:w-1/2 aspect-square bg-gray-50 dark:bg-dark-bg rounded-3xl flex items-center justify-center border-2 border-dashed border-gray-200 dark:border-dark-border relative overflow-hidden group">
-                    <div className="absolute inset-0 bg-gradient-to-tr from-primary-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                    <ShoppingCart className="w-32 h-32 text-gray-300 dark:text-gray-600 group-hover:scale-110 transition-transform duration-500" />
+                <div className="w-full md:w-1/2 aspect-square bg-gray-50 dark:bg-dark-bg rounded-3xl flex items-center justify-center border-2 border-solid border-gray-100 dark:border-dark-border relative overflow-hidden group">
+                    <div className="absolute inset-0 bg-gradient-to-tr from-primary-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 pointer-events-none"></div>
+                    {product.image_url ? (
+                        <img src={product.image_url} alt={product.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                    ) : (
+                        <ShoppingCart className="w-32 h-32 text-gray-300 dark:text-gray-600 group-hover:scale-110 transition-transform duration-500" />
+                    )}
                 </div>
 
                 <div className="w-full md:w-1/2 flex flex-col justify-center">
