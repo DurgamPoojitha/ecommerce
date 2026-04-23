@@ -53,17 +53,19 @@ def seed_data():
 
     # Create Products
     products_data = [
-        {"title": "Kurkure Masala Munch", "description": "Spicy Indian snack.", "price": 20, "stock": 100, "category_name": "Snacks", "image_url": "https://images.unsplash.com/photo-1599490659213-e2b9527bd087?q=80&w=1470&auto=format&fit=crop"},
-        {"title": "Haldiram's Bhujia", "description": "Classic savory snack.", "price": 50, "stock": 200, "category_name": "Snacks", "image_url": "https://images.unsplash.com/photo-1621447504864-d87311c14041?q=80&w=1502&auto=format&fit=crop"},
+        {"title": "Kurkure Masala Munch", "description": "Spicy Indian snack.", "price": 20, "stock": 100, "category_name": "Snacks", "image_url": "https://loremflickr.com/800/600/snacks,chips"},
+        {"title": "Haldiram's Bhujia", "description": "Classic savory snack.", "price": 50, "stock": 200, "category_name": "Snacks", "image_url": "https://loremflickr.com/800/600/snack,bhujia,spicy"},
         
-        {"title": "Wooden Study Table", "description": "Ergonomic study table for your home office.", "price": 4500, "stock": 20, "category_name": "Furniture", "image_url": "https://images.unsplash.com/photo-1505843490538-5133c6c7d0e1?q=80&w=1469&auto=format&fit=crop"},
-        {"title": "Ergonomic Office Chair", "description": "Comfortable chair with lumbar support.", "price": 6000, "stock": 15, "category_name": "Furniture", "image_url": "https://images.unsplash.com/photo-1505843513577-22bb7d21e455?q=80&w=1471&auto=format&fit=crop"},
+        {"title": "Wooden Study Table", "description": "Ergonomic study table for your home office.", "price": 4500, "stock": 20, "category_name": "Furniture", "image_url": "https://loremflickr.com/800/600/desk,wood"},
+        {"title": "Ergonomic Office Chair", "description": "Comfortable chair with lumbar support.", "price": 6000, "stock": 15, "category_name": "Furniture", "image_url": "https://loremflickr.com/800/600/officechair,furniture"},
         
-        {"title": "Smartphone 5G", "description": "Latest 5G smartphone with incredible camera.", "price": 45000, "stock": 50, "category_name": "Electronics", "image_url": "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?q=80&w=1480&auto=format&fit=crop"},
-        {"title": "Wireless Earbuds", "description": "Noise-cancelling wireless earbuds.", "price": 2500, "stock": 150, "category_name": "Electronics", "image_url": "https://images.unsplash.com/photo-1590658268037-6bf12165a8df?q=80&w=1632&auto=format&fit=crop"},
+        {"title": "Smartphone 5G", "description": "Latest 5G smartphone with incredible camera.", "price": 45000, "stock": 50, "category_name": "Electronics", "image_url": "https://loremflickr.com/800/600/smartphone,phone"},
+        {"title": "Wireless Earbuds", "description": "Noise-cancelling wireless earbuds.", "price": 2500, "stock": 150, "category_name": "Electronics", "image_url": "https://loremflickr.com/800/600/earbuds,audio"},
+        {"title": "Mechanical Keyboard", "description": "RGB mechanical keyboard for programming and gaming.", "price": 3200, "stock": 70, "category_name": "Electronics", "image_url": "https://loremflickr.com/800/600/keyboard,mechanical"},
         
-        {"title": "Cotton T-Shirt", "description": "100% pure cotton comfortable tee.", "price": 499, "stock": 300, "category_name": "Clothes", "image_url": "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=1480&auto=format&fit=crop"},
-        {"title": "Denim Jeans", "description": "Classic blue slim-fit jeans.", "price": 1299, "stock": 100, "category_name": "Clothes", "image_url": "https://images.unsplash.com/photo-1542272604-780447ec15cd?q=80&w=1470&auto=format&fit=crop"}
+        {"title": "Cotton T-Shirt", "description": "100% pure cotton comfortable tee.", "price": 499, "stock": 300, "category_name": "Clothes", "image_url": "https://loremflickr.com/800/600/tshirt,cotton"},
+        {"title": "Denim Jeans", "description": "Classic blue slim-fit jeans.", "price": 1299, "stock": 100, "category_name": "Clothes", "image_url": "https://loremflickr.com/800/600/jeans,denim"},
+        {"title": "Winter Jacket", "description": "High quality thermal winter wear jacket.", "price": 2999, "stock": 45, "category_name": "Clothes", "image_url": "https://loremflickr.com/800/600/jacket,winter"}
     ]
     
     for prod in products_data:

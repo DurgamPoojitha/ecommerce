@@ -10,7 +10,7 @@ const Layout = () => {
                 <Outlet />
             </main>
             <footer className="w-full py-8 text-center text-sm font-medium text-gray-500 dark:text-gray-400 border-t border-gray-200 dark:border-dark-border mt-auto">
-                &copy; {new Date().getFullYear()} NovaStore Premium Electronics. All rights reserved.
+                &copy; {new Date().getFullYear()} NovaStore Premium. All rights reserved.
             </footer>
         </div>
     );
