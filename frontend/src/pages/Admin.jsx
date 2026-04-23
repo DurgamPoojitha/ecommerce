@@ -76,7 +76,7 @@ const Admin = () => {
                         </div>
 
                         <div>
-                            <label className="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-2 uppercase tracking-wide">Price (USD)</label>
+                            <label className="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-2 uppercase tracking-wide">Price (INR)</label>
                             <input type="number" step="0.01" required value={price} onChange={(e) => setPrice(e.target.value)} className="w-full px-5 py-4 bg-gray-50 dark:bg-dark-bg border border-gray-200 dark:border-dark-border rounded-xl focus:ring-2 focus:ring-primary-500 text-gray-900 dark:text-white outline-none transition-all shadow-inner" placeholder="299.99" />
                         </div>
 

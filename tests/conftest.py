@@ -8,7 +8,7 @@ from database.base import Base
 from main import app
 
 # Using an isolated local SQLite DB for high-speed testing without touching production Postgres
-SQLALCHEMY_DATABASE_URL = "sqlite:///./test.db"
+SQLALCHEMY_DATABASE_URL = "sqlite:///./pytest.db"
 engine = create_engine(SQLALCHEMY_DATABASE_URL, connect_args={"check_same_thread": False})
 TestingSessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
