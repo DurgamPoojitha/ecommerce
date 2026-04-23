@@ -11,6 +11,7 @@ from models.product import Category, Product
 from services.auth import get_password_hash
 
 def seed_data():
+    Base.metadata.create_all(bind=engine)
     db = SessionLocal()
     
     # Create Admin
@@ -74,7 +75,8 @@ def seed_data():
                 description=prod["description"],
                 price=prod["price"],
                 stock=prod["stock"],
-                category_id=cat_id
+                category_id=cat_id,
+                image_url=prod.get("image_url")
             )
             db.add(new_prod)
             db.commit()

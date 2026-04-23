@@ -43,9 +43,16 @@ const Cart = () => {
                     {cartItems.map((item) => (
                         <div key={item.id} className="flex justify-between items-center p-6 bg-white dark:bg-dark-card rounded-2xl shadow-sm border border-gray-100 dark:border-dark-border">
                             <div className="flex items-center gap-6">
-                                <div className="h-20 w-20 bg-gray-100 dark:bg-dark-bg rounded-lg"></div>
+                                <div className="h-20 w-20 bg-gray-100 dark:bg-dark-bg rounded-lg overflow-hidden flex items-center justify-center">
+                                    {item.product?.image_url ? (
+                                        <img src={item.product.image_url} alt={item.product.title} className="w-full h-full object-cover" />
+                                    ) : (
+                                        <span className="text-gray-400 text-xs">No Image</span>
+                                    )}
+                                </div>
                                 <div>
-                                    <h3 className="text-lg font-bold text-gray-900 dark:text-white">Product #{item.product_id}</h3>
+                                    <h3 className="text-lg font-bold text-gray-900 dark:text-white">{item.product?.title || `Product #${item.product_id}`}</h3>
+                                    <p className="text-primary-600 dark:text-primary-400 font-bold mb-1">₹{(item.product?.price || 0).toFixed(2)}</p>
                                     <p className="text-gray-500 dark:text-gray-400 font-medium">Qty: {item.quantity}</p>
                                 </div>
                             </div>

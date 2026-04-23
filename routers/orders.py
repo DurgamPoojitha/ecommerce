@@ -6,8 +6,8 @@ from database.session import get_db
 from models.order import Order, OrderItem, CartItem
 from models.product import Product
 from models.user import User
-from schemas.order import OrderResponse
-from services.auth import get_current_user
+from schemas.order import OrderResponse, OrderAdminResponse
+from services.auth import get_current_user, get_current_admin_user
 
 router = APIRouter(prefix="/orders", tags=["Orders"])
 
@@ -49,3 +49,7 @@ def place_order(current_user: User = Depends(get_current_user), db: Session = De
 @router.get("/", response_model=List[OrderResponse])
 def order_history(current_user: User = Depends(get_current_user), db: Session = Depends(get_db)):
     return db.query(Order).filter(Order.user_id == current_user.id).all()
+
+@router.get("/all", response_model=List[OrderAdminResponse])
+def get_all_orders(admin_user: User = Depends(get_current_admin_user), db: Session = Depends(get_db)):
+    return db.query(Order).all()
