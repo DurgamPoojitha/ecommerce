@@ -21,7 +21,7 @@ def create_category(category: CategoryCreate, db: Session = Depends(get_db), adm
 def get_categories(db: Session = Depends(get_db)):
     return db.query(Category).all()
 
-@router.post("/products/", response_model=ProductResponse)
+@router.post("/", response_model=ProductResponse)
 def create_product(product: ProductCreate, db: Session = Depends(get_db), admin=Depends(get_current_admin_user)):
     new_product = Product(**product.model_dump())
     db.add(new_product)
@@ -29,7 +29,7 @@ def create_product(product: ProductCreate, db: Session = Depends(get_db), admin=
     db.refresh(new_product)
     return new_product
 
-@router.get("/products/", response_model=List[ProductResponse])
+@router.get("/", response_model=List[ProductResponse])
 def get_products(
     search: str = None, 
     category_id: int = None, 
@@ -44,7 +44,7 @@ def get_products(
         query = query.filter(Product.category_id == category_id)
     return query.offset(skip).limit(limit).all()
 
-@router.put("/products/{product_id}", response_model=ProductResponse)
+@router.put("/{product_id}", response_model=ProductResponse)
 def update_product(product_id: int, product_update: ProductCreate, db: Session = Depends(get_db), admin=Depends(get_current_admin_user)):
     product = db.query(Product).filter(Product.id == product_id).first()
     if not product:
@@ -55,7 +55,7 @@ def update_product(product_id: int, product_update: ProductCreate, db: Session =
     db.refresh(product)
     return product
 
-@router.delete("/products/{product_id}")
+@router.delete("/{product_id}")
 def delete_product(product_id: int, db: Session = Depends(get_db), admin=Depends(get_current_admin_user)):
     product = db.query(Product).filter(Product.id == product_id).first()
     if not product:
