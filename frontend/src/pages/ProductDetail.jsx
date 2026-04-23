@@ -62,7 +62,7 @@ const ProductDetail = () => {
                     </p>
 
                     <div className="flex items-end gap-6 mb-10">
-                        <span className="text-5xl lg:text-6xl font-black text-primary-600 dark:text-primary-400 tracking-tight">${product.price.toFixed(2)}</span>
+                        <span className="text-5xl lg:text-6xl font-black text-primary-600 dark:text-primary-400 tracking-tight">₹{product.price.toFixed(2)}</span>
                         <span className={`px-4 py-2 mb-2 rounded-xl text-sm font-bold shadow-sm ${product.stock > 0 ? 'bg-green-100 text-green-700 border border-green-200 dark:bg-green-900/30 dark:border-green-800/50 dark:text-green-400' : 'bg-red-100 text-red-700 border border-red-200 dark:bg-red-900/40 dark:border-red-800/50 dark:text-red-400'}`}>
                             {product.stock > 0 ? `${product.stock} Units Available` : 'Out of Stock'}
                         </span>

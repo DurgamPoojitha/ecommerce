@@ -53,7 +53,7 @@ const Products = () => {
                             <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2 line-clamp-1">{product.title}</h3>
                             <p className="text-gray-500 dark:text-gray-400 text-sm mb-4 line-clamp-2 h-10">{product.description || "Premium high-quality technical product with robust features."}</p>
                             <div className="flex justify-between items-center border-t border-gray-100 dark:border-dark-border pt-4 mt-auto">
-                                <span className="text-xl font-extrabold text-primary-600 dark:text-primary-400">${product.price.toFixed(2)}</span>
+                                <span className="text-xl font-extrabold text-primary-600 dark:text-primary-400">₹{product.price.toFixed(2)}</span>
                                 <span className={`text-xs font-bold px-2 py-1 rounded-md ${product.stock > 0 ? 'bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400' : 'bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-400'}`}>
                                     {product.stock > 0 ? `In Stock: ${product.stock}` : 'Out of Stock'}
                                 </span>
