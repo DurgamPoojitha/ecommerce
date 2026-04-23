@@ -7,7 +7,7 @@ from models.product import Product, Category
 from schemas.product import ProductCreate, ProductResponse, CategoryCreate, CategoryResponse
 from services.auth import get_current_admin_user
 
-router = APIRouter(tags=["Products"])
+router = APIRouter(prefix="/products", tags=["Products"])
 
 @router.post("/categories/", response_model=CategoryResponse)
 def create_category(category: CategoryCreate, db: Session = Depends(get_db), admin=Depends(get_current_admin_user)):
